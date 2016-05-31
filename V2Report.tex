@@ -1,0 +1,454 @@
+\documentclass[10pt]{article}
+%\usepackage[utf8]{inputenc}
+\usepackage[font=footnotesize]{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{ngerman}
+\usepackage{listingsutf8}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}
+\usepackage{subfigure} % f√ºr Plots nebeneinander
+
+
+\begin{document}
+
+%\sffamily % TEST Schriftart
+
+\thispagestyle{empty}
+\begin{center}
+
+%\begin{center}
+%\includegraphics[width=.3\textwidth]{husiegel_sw_op}\\[0.6cm]
+%\textsc{\LARGE HU BERLIN}\\[1.3cm]
+%\end{center}
+
+{\huge \textbf{E-Praktikum}}\\[6mm]
+{\huge \textbf{Bipolartransistoren}}\\[13mm]
+
+\begin{tabbing}
+absatzabsatzabsatz\= mehr \kill
+\> \textit{Betreuer:}\\\> Martin Handwerg\\[2mm]
+\> \textit{Datum:}\\\> 19.05.2016\\[2mm]
+%\> \textit{Raum:}\\\> 0'107, Newtonstra"se 15, HU Berlin \\[2mm]
+\> \textit{Verfasser:} \\
+\> Ian Clotworthy (519006)\\
+\> Stefan M"oller (164903)\\[2mm]
+\end{tabbing}
+\end{center}
+\vskip 5ex
+\renewcommand
+\abstractname{Abstract}
+\begin{abstract}
+
+%In diesem Versuch/Experiment
+%Gegenstand dieses Versuchs/von diesem Versuch
+%Im Rahmen dieses Versuchs
+%(Die) Laserspektroskopie
+%Im folgenden (Versuch)
+%Mithilfe/Mittels
+
+Gegenstand dieses Versuchs war eine praktische Untersuchung der in der Vorlesung diskutierten Dioden und Transistoren. Zuerst wurden Strom-Spannung-Kennlinien f"ur drei Diodenarten: Si, Z und LED.
+
+\end{abstract}
+
+\newpage 
+
+%\rmfamily  %%% TEST Schriftart
+
+\tableofcontents
+\newpage
+
+%%%
+%%%
+%%%
+
+\newpage
+
+
+%%% AUSWERTUNG UND DISKUSSION %%%
+\section{Auswertung und Diskussion}
+\subsection{Messger"ate}
+Die verwendeten Messger"ate waren:
+
+\begin{tabular}{l l l}
+Ger"at & Seriennummer & Hersteller \\
+Generator & AFG-2005 & GW INSTEK \\
+Oszilloskop & GDS-1022 & GW INSTEK \\
+Digital-Multimeter & EX 330 & EXTECH \\
+Analog-Multimeter & GS6510 & Voltcraft\\
+\end{tabular}\\
+
+\subsection{Aufnahme der Kennlinien}
+Um die Kennlinie der Silizium Diode aufzunehmen, wurden die Spannungen $U_R$ ("uber den Widerstand) und $U_D$ ("uber die Diode) gemessen. Es wurde eine Gleichspannung $U_Q$ angelegt, welche in Schritten von 2V bis 30V erh"oht wurde. Diese letzte hat, mit $R = 1k\Omega$, $U_R = 29,3V$ und $I_D = I_R = 29,3mA$ ergeben. Dies hat folgende Kennlinie ergeben: 
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=100mm]{IU-Kennlinie-Si-Diode}
+    \caption{Kennlinie der Silizium Diode}
+   \end{center}
+\end{figure}
+
+%Mit dem Generator wurde eine Wechselspannung von $V_{pp}=2,5V$ mit Frequenz $f=50Hz$ angelegt und mit drei Ger"aten gemessen. Beim ersten Teil wurde mit dem Oszilloskop auch DC-Kopplung beobachtet. \\ \\
+%Der digitale Multimeter zeigte $V_{pp}=$ an und und der Oszilloskop zeigte $V_{pp}=$ an. Die Ergebnisse sind gelistet. Grund f"ur den Unterschied ist ...\\
+%
+\begin{tabular}{l l l l}
+Ger"at & AC ($V_{pp}$) & AC ($2 \cdot V_{RMS}$) & DC (mV) \\
+Generator & 2,50 & - & -\\
+Oszilloskop & 5,44 & 1,88 & 0$\pm$ 10,0 \\
+Digital-Multimeter & - & 1,87 & 17,8 \\
+Analog-Multimeter & - & 1,89 & 17,5 \\
+\end{tabular}\\\\
+
+Dann wurde eine Gleichspannung $U=0,6 V$ dazu angelegt und auch gemessen.\\ \\
+\begin{tabular}{l l l l}
+Ger"at & AC ($V_{pp}$) & AC ($2 \cdot V_{RMS}$) & DC (mV) \\
+Generator & 2,50 & - & 0,60 \\
+Oszilloskop & 5,28 & 1,80 & 1,24 \\
+Digital-Multimeter & - & 1,80 & 1,23 \\
+Analog-Multimeter & - & 1,82 & 1,22
+\end{tabular}\\\\
+
+Dann wurde die Wechselspannung um eine Gr"o"senordnung weniger heruntergedreht.\\ \\
+\begin{tabular}{l l l l}
+Ger"at & AC ($V_{pp}$) & AC ($2 \cdot V_{RMS}$) & DC (V) \\
+Generator & 0,25 & - & 0,60 \\
+Oszilloskop & 0,53 & 0,18 & 0,52  \\
+Digital-Multimeter & - & 0,18 & 1,24  \\
+Analog-Multimeter & - & 0,18 & 1,24 \\
+\end{tabular}\\\\
+
+Der Grund f"ur die Differenz zwischen den $V_{pp}$ Angaben h"angt mit den Innerwiderst"anden zusammen. Der Generator hat einen von $R_G=50 \Omega$. Der Oszilloskop misst die Spannung jedoch "uber seinen (frequenzabh"angigen) Eingangswiderstand von $Z_E=1 M\Omega \pm 2\%$ und seinen Eingangskondensator $C_E=15 pF$. Dies verursacht bei kleinen Frequenzen den beobachteten Faktor von etwa 2,1.
+
+%\newpage
+\subsection{Sollwert-Anzeige am Generator}
+Der Begriff Peak-to-Peak Voltage $V_{pp}$ ist die Angabe der Amplitude zwischen Maximum und Minimum des Signals. RMS Spannung, $V_{RMS}$, bedeutet die W"urzel der zeitgemittelten Wert des Quadrats der Amplitude. F"ur sinusf"ormige Spannungen gilt $V_{RMS}=\frac{V_{pp}}{2 \sqrt{2}}$. Die Decibel Skala dr"uckt eine $log_{10}$ Beziehung zwischen zwei Leistungen oder Spannungen aus. Der Begriff dBm ist eine Angabe einer Leistung im Bezug auf den Referenzwert $P_0=1mW$.\\
+
+Der untere Wert im Bild steht im Verh"altnis zum RMS vom oberen Wert $V_{RMS}=\frac{V_{pp}}{2 \sqrt{2}} \approx 0,7V$. Mit $P=\frac{U^2}{R}$ und $R_G=50 \Omega$, l"asst sich der Referenzwert f"ur Leistung in einen f"ur Spannung umrechnen: $U_{ref}=\sqrt{P_0 R_G}=0,224 V$. Mit der Formel
+\begin{eqnarray}
+ a_U = 20 \cdot log_{10}(\frac{V_{RMS}}{U_{ref}})
+\end{eqnarray}
+Mit $a=9.99 dBm$, best"atigt diese Formel die Anzeige.\\
+
+Die abgegebene Leistung an einem beliebigen Widerstand $R$ bei $U_{pp}=2V$:
+
+\begin{eqnarray}
+ P = \frac{U_{RMS}^2}{R} \cdot (\frac{R}{R+R_G})^2 = \frac{U_{pp}^2}{8} \cdot \frac{R}{(R+R_G)^2} = \frac{1}{2} \cdot \frac{R}{(R+50\Omega)^2}
+\end{eqnarray}
+
+Bei $R=560 \Omega$ berechnet sich $P=0,752mW$. Mit der Version von (1) f"ur Leistung ist der dBm Wert 
+\begin{center}
+$a_P = 10 \cdot log_{10}(\frac{P}{1mW})=-1.24$ dBm
+\end{center}
+
+Bei $P_{max}$, $\dfrac{dP}{dR}=0=\frac{50 \Omega - R}{2(R+50 \Omega)^3}$. $P_{max}$ wird erreicht, wenn $R=R_G=50 \Omega$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hochohmiger Spannungsteiler}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Nach Abb. 3 in der Versuchsbeschreibung wurde ein Hochohmiger Spannungsteiler aufgebaut, wobei alle Widerst"ande $R_i=1M\Omega$ beitragen. Erst wurde die Spannung "uber den ersten Widerstand gemessen, dann "uber die ersten zwei, bis auf alle zusammen. Mit dem Generator wurde eine Wechselspannung von $V_{pp}=8V$ mit Frequenz $f=1kHz$ angelegt. Erst wurde die Messreihe nur mit dem Multimieter EX330 gemacht, und dann mit parallel angeschlossenen Oszilloskop wiederholt.\\
+
+
+Die unterschiedlichen Verl"aufe lassen sich durch Innenwiderst"ande der Messger"ate erkl"aren. Die "Ubertragungsfunktion lautet
+
+\begin{eqnarray}
+ \frac{U_a}{U_0} = 1-\frac{R_{\Sigma}-R_K}{R_{\Sigma}-R_K+(R_I \vert \vert R_K)}
+\end{eqnarray}
+
+Hier ist $R_{\Sigma}=8M\Omega$ die Summe aller geschalteten Widerst"ande, $R_K$ ist die Summe der Kette von Widerst"ande, wor"uber die Spannung $U_a$ gerade gemessen wird, und $R_I$ ist der Innenwiderstand des verwendeten Ger"ates. Die berechnete Gerade geht von idealen Bedingungen aus, wobei $R_I \rightarrow \infty$ und (3) vereinfacht zu $\frac{U}{U_0} = \frac{R_K}{R_{\Sigma}}$. Mit etwas Algebra wird (3) zu
+
+\begin{eqnarray}
+ \frac{U_a}{U_0} = 1-\frac{R_{\Sigma}R_I+R_K(R_I-R_{\Sigma})-R_K^2}{R_{\Sigma}R_I+R_K(2R_I-R_{\Sigma})-R_K^2}
+\end{eqnarray}
+\noindent
+Die Verl"aufe der Messwerte approximieren diese quadratische Funktion.
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Frequenzabh"angiger Spannungsteiler (RC-Glied)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Hier wurde ein einfacher Spannungsteiler gebaut, aber mit einem RC-Glied. Auf Abb. 4 in der Versuchsbeschreibung wird verwiesen. Es wurde ein Widerstand $R=1k\Omega$ und Grenzfrequenz $f_g=1kHz$, und dementsprechend ein Kondensator $C=160nF$ gew"ahlt. Diese Angaben wurden auch mit dem Multimeter gepr"uft. Die "Ubertragungsfunktion - das Verh"altnis zw. Eingangs- und Ausgangsspannung, wurde zuerst ohne einen Lastwiderstand $R_L$, f"ur eine Reihe von Frequenzen zw. 30Hz und 10kHz gemessen.\\
+
+Dann wurde die Messung f"ur drei verschiedene $R_L$ wiederholt. Die "Ubertragungsfunktion wurde logarithmisch in Abh"angigkeit von der Frequenz dargestellt. Mithilfe der Formel
+
+\begin{eqnarray}
+ \frac{U_a}{U_0} = \frac{1}{\sqrt{1+(2\pi fRC)^2}}
+\end{eqnarray}
+\noindent
+woraus sich durch Umstellen nach $2\pi fRC$ und Einsetzen in
+
+\begin{eqnarray}
+ \phi (f) = -\arctan(2\pi fRC) = -\arctan(\sqrt{\frac{U_0^2}{U_a^2}-1})
+\end{eqnarray}
+\noindent
+der Phasenfrequenzganz bestimmt.\\
+
+Die Messung wurde dabei zuerst ohne Last, dann mit drei verschiedenen Lastwiderst"anden wiederholt. Letzteres hat eine Erh"ohung der Grenzfrequenz zur Folge, da die so entstandene Parallelschaltung von $R$ und $R_L$ zu einem Ersatzwiderstand $R'=\frac{RR_L}{R+R_L}<R$ f"uhrt, aus dem sich $f_g'\propto{1/R'}>f_g$ ergibt.\\
+
+%\noindent
+Jeder Aufbau wurde auch in Multisim simuliert und die dabei erhaltenen Daten zum Vergleich in die Bode-Diagramme eingetragen (durchgezogenen Kurven). Eingezeichnet sind auch Grenzfrequenz (gestrichelte senkrechte Linie) und zur Bestimmung der Steilheit der Flanke im Amplitudenfrequenzgang oberhalb der Grenzfrequenz die Interpolation zwischen erstem und letztem Messpunkt oberhalb $f_g$, siehe dazu auch Tabelle 1.\\ %\ref{tab:TabelleBode}\\
+
+%\noindent
+Die Simulation stimmt jeweils beim Betrag der "Ubertragungsfunktion gut mit den Daten aus der Simulation "uberein, beim Phasenfrequenzgang gibt es f"ur das belastete RC-Glied jedoch signifikante Unterschiede. Es k"onnte daran liegen, dass wir eine zu niedrige Grenzfrequenz von 1kHz gew"ahlt haben.
+
+%Die Simulation stimmt mit den Messwerten ohne Last "uberein, und auch f"ur die Spannungsverl"aufe der anderen $R_L$. Allerdings bei den letzteren weicht die Simulation von den Messwerten stark ab, besonders bei kleinen Frequenzen. Es k"onnte daran liegen, dass wir eine zu niedrige Grenzfrequenz von 1kHz gew"ahlt haben.\begin{figure}[h!]
+
+
+
+%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Simulation verschiedener Vierpolkombinationen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{RC-Glied mit Last}
+Die RC-Glieder waren bereits simuliert. Die Ergebnisse sind in Abb. 5 zusammengezeigt.
+
+
+
+Die folgende Schaltung wurde in Multisim aufgebaut. Dem Widerstand $R_{12}$ wurde erst ein Wert von 10$\Omega$ zugeordnet. Bei jeder Simulation wurde dieser Wert um eine Gr"o"senordnung erh"oht, wobei es immer galt $R_{11}=10 \cdot R_{12}$. Der Wert $R_{21} = 100\Omega$ wurde festgehalten. Um die Ausgangsspannungen nach jedem Spannungsteiler messen zu k"onnen, wurde an der Stelle jeweils ein Bodeplotter angeschaltet.
+
+Der Verlauf f"ur den zweiten Teiler (Abb. 8) sieht aus wie der von einem frequenzabh"angigen Teiler mit Last. Man merkt, je gr"o"ser war $R_{12}$, desto fr"uher im Frequenzgang ist die Ausgangsspannung abgefallen. Bei hohen Frequenzen sinkt sie nicht mehr, sondern nimmt einen konstanten Wert an. Bei solchen Frequenzen wird Kondensator fast vernachl"assigbar, weil nur noch eine geringe Spannung dar"uber abf"allt. 
+
+\subsubsection{Drei gleichen Spannungsteiler}
+Nun wurden drei identischen RC-Glieder aneinander geschaltet, jedes mit einem zugeh"origen Bodeplotter. Diese Diagramme sind in Abb. 10 zusammengestellt. Die gelbe Linie in dieser logarithmischen Darstellung ist die Summe der beiden anderen. Das funktioniert, wegen der Regel $log(z)=log(xy)=log(x)+log(y)$. Der Phasenverlauf zeigt kleine Verzerrungen, die mit dem ersten leichten Abstieg zusammenfallen. Dabei per Definition f"allt die Ausgangsspannung auf das $1/\sqrt{2}$-Fach ihres maximalen Werts. Beim Spannungsverlauf es gibt ein leichter Abstieg, bevor der st"arkere endg"ultige Abstieg beginnt.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+
+%\vskip 1cm
+\begin{thebibliography}{4}
+\bibitem {schwarz} Chiatti: Versuchsanleitung \textit{Versuch 1: Passive Bauelemente}, 2016
+%\bibitem {schwarz} Dinkelaker, Mandel: Versuchsanleitung im F-Praktikum Physik \textit{Laserspektroskopie an Rubidiumgas}, 2016
+%\bibitem {blau} Dr. Uwe M"uller: Physikalisches Grundpraktikum. Einf"uhrung in die Messung. Auswertung und 
+%Darstellung experimenteller Ergebnisse in der Physik, 2007
+%\bibitem {hellbunt} Steck, D. A. (2010): Rubidium 87 D Line Data; \textit{http://steck.us/alkalidata/rubidium87numbers.pdf}
+% \bibitem {bunt} Demtröder, W. (2010): Experimentalphysik 3 - Atome, Moleküle und Festkörper (Abschnitt 10.2.7)
+%\bibitem {gelb} Demtröder, W. (2011): Laserspektroskopie 1 (Abschnitt 3.2, Doppler-Verbreiterung und Abschnitt 5.6.1, Halbleiterlaser)
+
+\end{thebibliography}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendix}
+
+\section{Aufgenommene Messwerte}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
+\midrule
+0,04	&8,4&	8,6\\
+0,2	&8,4&	8,6\\
+0,41	&8,4&	7,9\\
+0,81	&8,4&	6,7\\
+0,9	&8,4&	6,5\\
+1	&8,4&	6,2\\
+1,3	&8,4&	5,4\\
+2	&8,4&	4,2\\
+2,8	&8,1&	3,2\\
+3,6	&8,1&	2,6\\
+4,6	&8,1&	1,84\\
+6	&8,1&	1,44\\
+10	&8,1&	0,9\\
+\bottomrule
+\end{tabular}
+\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) ohne Last}
+\end{center}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
+\midrule
+0,03	&8,3&	2,92\\
+0,1	&8&		3,02\\
+0,3	&8,3&	2,94\\
+0,6	&8,3&	2,9\\
+0,8	&8,4&	2,82\\
+1	&8,3&	2,76\\
+1	&8,4&	2,72\\
+1	&8,4&	2,68\\
+2	&8,3&	2,6\\
+2	&8,3&	2,52\\
+2	&8,3&	2,44\\
+2	&8,3&	2,36\\
+3	&8,3&	2,2\\
+3	&8,1&	2,08\\
+3	&8,1&	1,98\\
+4	&8,3&	1,88\\
+4	&8,3&	1,74\\
+4	&8,1&	1,66\\
+5	&8,1&	1,58\\
+5	&8,1&	1,5\\
+5	&8,1&	1,42\\
+6	&8,1&	1,34\\
+6	&8,1&	1,26\\
+7	&8,1&	1,18\\
+7	&8,1&	1,09\\
+8	&8,1&	1,03\\
+9	&8,1&	0,97\\
+9	&8,1&	0,91\\
+10	&8,1&	0,88\\
+10	&8,1&	0,83\\
+\bottomrule
+\end{tabular}
+\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) mit Last $R_L=0.568 k\Omega$}
+\end{center}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
+\midrule
+0,04	&8,3&	4,2\\
+0,1	&8,1&	4,5\\
+0,19	&8,4&	4,2\\
+0,3	&8,4&	4,2\\
+0,4	&8,4&	4,2\\
+0,6	&8,4&	4,2\\
+0,8	&8,4&	3,84\\
+0,9	&8,4&	3,76\\
+1	&8,4&	3,68\\
+1,1	&8,4&	3,68\\
+1,2	&8,4&	3,52\\
+1,3	&8,4&	3,52\\
+1,4	&8,4&	3,4\\
+1,5	&8,3&	3,36\\
+1,6	&8,4&	3,32\\
+1,7	&8,3&	3,2\\
+1,8	&8,3&	3,08\\
+2	&8,1&	3,04\\
+2,2	&8,3&	2,88\\
+2,4	&8,3&	2,72\\
+2,6	&8,3&	2,6\\
+2,8	&8,3&	2,52\\
+3	&8,2&	2,4\\
+3,2	&8,2&	2,24\\
+3,6	&8,3&	2,12\\
+4	&8,2&	2,04\\
+4,2	&8,1&	1,92\\
+4,6	&8,1&	1,76\\
+5	&8,1&	1,68\\
+5,3	&8,2&	1,6\\
+5,7	&8,1&	1,48\\
+6	&8,1&	1,44\\
+6,3	&8,1&	1,44\\
+6,6	&8,1&	1,4\\
+6,8	&8,1&	1,32\\
+7,2	&8,1&	1,28\\
+7,6	&8,1&	1,12\\
+8	&8,1&	1,12\\
+8,5	&8&		1,12\\
+9	&8,1&	0,96\\
+9,6	&8,1&	0,96\\
+10	&8,1&	0,96\\
+\bottomrule
+\end{tabular}
+\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) mit Last $R_L=0.99 k\Omega$}
+\end{center}
+\end{table}
+
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
+\midrule
+0,04	&8,4	&7,52\\
+0,09	&8,3	&7,7\\
+0,16	&8,4	&7,52\\
+0,25	&8,4	&7,36\\
+0,33	&8,4	&7,24\\
+0,44	&8,4	&7,04\\
+0,53	&8,4	&6,88\\
+0,64	&8,4	&6,56\\
+0,75	&8,4	&6,24\\
+0,81	&8,4	&6,12\\
+0,86	&8,4	&6,08\\
+0,92	&8,4	&5,92\\
+1	&8,4	&5,64\\
+1,2	&8,4	&5,24\\
+1,4	&8,4	&4,8\\
+1,7	&8,3	&4,2\\
+2	&8,3	&3,72\\
+2,2	&8,4	&3,52\\
+2,5	&8,3	&3,16\\
+2,8	&8,3	&2,88\\
+3,2	&8,1	&2,56\\
+3,6	&8,1	&2,36\\
+4	&8	&2,12\\
+4,3	&8	&2,08\\
+4,8	&8	&1,76\\
+5,2	&8	&1,76\\
+5,6	&8,1	&1,6\\
+6	&8,1	&1,44\\
+6,4	&8	&1,44\\
+6,8	&8	&1,4\\
+7,2	&8	&1,18\\
+7,6	&8	&1,14\\
+8	&8	&1,06\\
+8,5	&8	&1,02\\
+9	&8	&0,96\\
+9,5	&8	&0,9\\
+10	&8	&0,86\\
+\bottomrule
+\end{tabular}
+\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) mit Last $R_L=10 k\Omega$}
+\end{center}
+\end{table}
+
+
+\end{appendix}
+
+\end{document}
+
+
+%%%   %      %   %%%    %%% 
+%         %%   %   %    %   %
+%%%   % %  %   %     %  %%%
+%         %   %%   %     %  %
+%%%   %      %   %%%    %%%
+
+
+%%% Grafik %%%
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=100mm]{}
+    \caption{}
+   \end{center}
+\end{figure}
+
+
+%%% Tabelle %%% 
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{rrrrrr}
+\toprule
+$\theta [^\circ] $ & $\psi [^\circ]$ & $\Delta [^\circ]$ & $n_W$[\textendash] & n [\textendash] & $\kappa$ [\textendash] \\
+\midrule
+46 & 11,47 & 180,33 & 1,335 & 1,335 & 0,002 \\
+50 & 5,18 & 179,53 & 1,337 & 1,336 & 0,001 \\
+56 & 4,62 & 0,34 & 1,335 & 1,334 & 0,001 \\
+60 & 10,53 & 6,04 & 1,346 & 1,346 & 0,032 \\
+\bottomrule
+\end{tabular}
+\caption{Brechungsindex und Extinktionskoeffizient von Wasser, ermittelt "uber die Messung von Ellipsometerwinkel $\psi$ und Phasenverschiebung $\Delta$ eines an der Grenzfl"ache Luft-Wasser reflektierten Laserstrahls f"ur verschiedene Einfallswinkel $\theta$. Berechnung der Werte in Spalte vier nach Formel (3), in den letzten beiden Spalten durch die auf dem am Arbeitsplatz befindlichen PC installierte Analyse-Software.}
+\end{center}
+\end{table}
+
+
+\\\\
