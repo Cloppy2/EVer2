@@ -7,7 +7,7 @@
 \usepackage{listingsutf8}
 \usepackage{booktabs}
 \usepackage[version=3]{mhchem}
-\usepackage{subfigure} % fÃ¼r Plots nebeneinander
+\usepackage{subfigure} % fÃƒÂ¼r Plots nebeneinander
 
 
 \begin{document}
@@ -28,7 +28,7 @@
 \begin{tabbing}
 absatzabsatzabsatz\= mehr \kill
 \> \textit{Betreuer:}\\\> Martin Handwerg\\[2mm]
-\> \textit{Datum:}\\\> 19.05.2016\\[2mm]
+\> \textit{Datum:}\\\> 09.06.2016\\[2mm]
 %\> \textit{Raum:}\\\> 0'107, Newtonstra"se 15, HU Berlin \\[2mm]
 \> \textit{Verfasser:} \\
 \> Ian Clotworthy (519006)\\
@@ -47,7 +47,7 @@ absatzabsatzabsatz\= mehr \kill
 %Im folgenden (Versuch)
 %Mithilfe/Mittels
 
-Gegenstand dieses Versuchs war eine praktische Untersuchung der in der Vorlesung diskutierten Dioden und Transistoren. Zuerst wurden Strom-Spannung-Kennlinien f"ur drei Diodenarten: Si, Z und LED.
+Gegenstand dieses Versuchs war eine praktische Untersuchung der in der Vorlesung diskutierten Dioden und Transistoren. Zuerst wurden Strom-Spannung-Kennlinien f"ur drei Diodenarten: Si, Z und LED aufgenommen.
 
 \end{abstract}
 
@@ -79,7 +79,7 @@ Analog-Multimeter & GS6510 & Voltcraft\\
 \end{tabular}\\
 
 \subsection{Aufnahme der Kennlinien}
-Um die Kennlinie der Silizium Diode aufzunehmen, wurden die Spannungen $U_R$ ("uber den Widerstand) und $U_D$ ("uber die Diode) gemessen. Es wurde eine Gleichspannung $U_Q$ angelegt, welche in Schritten von 2V bis 30V erh"oht wurde. Diese letzte hat, mit $R = 1k\Omega$, $U_R = 29,3V$ und $I_D = I_R = 29,3mA$ ergeben. Dies hat folgende Kennlinie ergeben: 
+Um die Kennlinie der Silizium Diode IN4004 aufzunehmen, wurden die Spannungen $U_R$ ("uber den Widerstand) mit dem Multimeter und $U_D$ ("uber die Diode) mit dem Oszilloskop gemessen. Es wurde eine Gleichspannung $U_Q$ angelegt, welche in Schritten von 2V bis 30V erh"oht wurde. Diese letzte hat, mit $R = 1k\Omega$, $U_R = 29,3V$ und $I_D = I_R = 29,3mA$ ergeben. Dies hat folgende Kennlinie ergeben: 
 
 \begin{figure}[h!]
   \begin{center}
@@ -88,25 +88,16 @@ Um die Kennlinie der Silizium Diode aufzunehmen, wurden die Spannungen $U_R$ ("u
    \end{center}
 \end{figure}
 
-%Mit dem Generator wurde eine Wechselspannung von $V_{pp}=2,5V$ mit Frequenz $f=50Hz$ angelegt und mit drei Ger"aten gemessen. Beim ersten Teil wurde mit dem Oszilloskop auch DC-Kopplung beobachtet. \\ \\
-%Der digitale Multimeter zeigte $V_{pp}=$ an und und der Oszilloskop zeigte $V_{pp}=$ an. Die Ergebnisse sind gelistet. Grund f"ur den Unterschied ist ...\\
-%
-\begin{tabular}{l l l l}
-Ger"at & AC ($V_{pp}$) & AC ($2 \cdot V_{RMS}$) & DC (mV) \\
-Generator & 2,50 & - & -\\
-Oszilloskop & 5,44 & 1,88 & 0$\pm$ 10,0 \\
-Digital-Multimeter & - & 1,87 & 17,8 \\
-Analog-Multimeter & - & 1,89 & 17,5 \\
-\end{tabular}\\\\
+Dann wurde die Si-Diode durch eine Z-Diode ersetzt, und die Messung wurde mit gleichen Bedingungen wiederholt. Dies hat folgende Kennlinie ergeben: 
 
-Dann wurde eine Gleichspannung $U=0,6 V$ dazu angelegt und auch gemessen.\\ \\
-\begin{tabular}{l l l l}
-Ger"at & AC ($V_{pp}$) & AC ($2 \cdot V_{RMS}$) & DC (mV) \\
-Generator & 2,50 & - & 0,60 \\
-Oszilloskop & 5,28 & 1,80 & 1,24 \\
-Digital-Multimeter & - & 1,80 & 1,23 \\
-Analog-Multimeter & - & 1,82 & 1,22
-\end{tabular}\\\\
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=100mm]{IU-Kennlinie-Z-Diode}
+    \caption{Kennlinie der Zener Diode}
+   \end{center}
+\end{figure}
+
+Dann wurde die Z-Diode durch eine LED ersetzt, und die Messung wurde wiederholt. Dieses Mal aber, war das Ziel lediglich die Schwellspannung zu bestimmen, bei welcher die LED leuchtet. Deswegen wurde die Gleichspannung in Schritten von nur 0.1V, statt 2V, erh"oht.
 
 Dann wurde die Wechselspannung um eine Gr"o"senordnung weniger heruntergedreht.\\ \\
 \begin{tabular}{l l l l}
@@ -229,188 +220,14 @@ Nun wurden drei identischen RC-Glieder aneinander geschaltet, jedes mit einem zu
 %\bibitem {blau} Dr. Uwe M"uller: Physikalisches Grundpraktikum. Einf"uhrung in die Messung. Auswertung und 
 %Darstellung experimenteller Ergebnisse in der Physik, 2007
 %\bibitem {hellbunt} Steck, D. A. (2010): Rubidium 87 D Line Data; \textit{http://steck.us/alkalidata/rubidium87numbers.pdf}
-% \bibitem {bunt} Demtršder, W. (2010): Experimentalphysik 3 - Atome, MolekŸle und Festkšrper (Abschnitt 10.2.7)
-%\bibitem {gelb} Demtršder, W. (2011): Laserspektroskopie 1 (Abschnitt 3.2, Doppler-Verbreiterung und Abschnitt 5.6.1, Halbleiterlaser)
+% \bibitem {bunt} DemtrÂšder, W. (2010): Experimentalphysik 3 - Atome, MolekÂŸle und FestkÂšrper (Abschnitt 10.2.7)
+%\bibitem {gelb} DemtrÂšder, W. (2011): Laserspektroskopie 1 (Abschnitt 3.2, Doppler-Verbreiterung und Abschnitt 5.6.1, Halbleiterlaser)
 
 \end{thebibliography}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendix}
-
-\section{Aufgenommene Messwerte}
-
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{rrr}
-\toprule
-f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
-\midrule
-0,04	&8,4&	8,6\\
-0,2	&8,4&	8,6\\
-0,41	&8,4&	7,9\\
-0,81	&8,4&	6,7\\
-0,9	&8,4&	6,5\\
-1	&8,4&	6,2\\
-1,3	&8,4&	5,4\\
-2	&8,4&	4,2\\
-2,8	&8,1&	3,2\\
-3,6	&8,1&	2,6\\
-4,6	&8,1&	1,84\\
-6	&8,1&	1,44\\
-10	&8,1&	0,9\\
-\bottomrule
-\end{tabular}
-\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) ohne Last}
-\end{center}
-\end{table}
-
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{rrr}
-\toprule
-f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
-\midrule
-0,03	&8,3&	2,92\\
-0,1	&8&		3,02\\
-0,3	&8,3&	2,94\\
-0,6	&8,3&	2,9\\
-0,8	&8,4&	2,82\\
-1	&8,3&	2,76\\
-1	&8,4&	2,72\\
-1	&8,4&	2,68\\
-2	&8,3&	2,6\\
-2	&8,3&	2,52\\
-2	&8,3&	2,44\\
-2	&8,3&	2,36\\
-3	&8,3&	2,2\\
-3	&8,1&	2,08\\
-3	&8,1&	1,98\\
-4	&8,3&	1,88\\
-4	&8,3&	1,74\\
-4	&8,1&	1,66\\
-5	&8,1&	1,58\\
-5	&8,1&	1,5\\
-5	&8,1&	1,42\\
-6	&8,1&	1,34\\
-6	&8,1&	1,26\\
-7	&8,1&	1,18\\
-7	&8,1&	1,09\\
-8	&8,1&	1,03\\
-9	&8,1&	0,97\\
-9	&8,1&	0,91\\
-10	&8,1&	0,88\\
-10	&8,1&	0,83\\
-\bottomrule
-\end{tabular}
-\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) mit Last $R_L=0.568 k\Omega$}
-\end{center}
-\end{table}
-
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{rrr}
-\toprule
-f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
-\midrule
-0,04	&8,3&	4,2\\
-0,1	&8,1&	4,5\\
-0,19	&8,4&	4,2\\
-0,3	&8,4&	4,2\\
-0,4	&8,4&	4,2\\
-0,6	&8,4&	4,2\\
-0,8	&8,4&	3,84\\
-0,9	&8,4&	3,76\\
-1	&8,4&	3,68\\
-1,1	&8,4&	3,68\\
-1,2	&8,4&	3,52\\
-1,3	&8,4&	3,52\\
-1,4	&8,4&	3,4\\
-1,5	&8,3&	3,36\\
-1,6	&8,4&	3,32\\
-1,7	&8,3&	3,2\\
-1,8	&8,3&	3,08\\
-2	&8,1&	3,04\\
-2,2	&8,3&	2,88\\
-2,4	&8,3&	2,72\\
-2,6	&8,3&	2,6\\
-2,8	&8,3&	2,52\\
-3	&8,2&	2,4\\
-3,2	&8,2&	2,24\\
-3,6	&8,3&	2,12\\
-4	&8,2&	2,04\\
-4,2	&8,1&	1,92\\
-4,6	&8,1&	1,76\\
-5	&8,1&	1,68\\
-5,3	&8,2&	1,6\\
-5,7	&8,1&	1,48\\
-6	&8,1&	1,44\\
-6,3	&8,1&	1,44\\
-6,6	&8,1&	1,4\\
-6,8	&8,1&	1,32\\
-7,2	&8,1&	1,28\\
-7,6	&8,1&	1,12\\
-8	&8,1&	1,12\\
-8,5	&8&		1,12\\
-9	&8,1&	0,96\\
-9,6	&8,1&	0,96\\
-10	&8,1&	0,96\\
-\bottomrule
-\end{tabular}
-\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) mit Last $R_L=0.99 k\Omega$}
-\end{center}
-\end{table}
-
-
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{rrr}
-\toprule
-f [kHz] & $U_q (V_{pp})$ [V] & $U_a (V_pp) [V]$\\
-\midrule
-0,04	&8,4	&7,52\\
-0,09	&8,3	&7,7\\
-0,16	&8,4	&7,52\\
-0,25	&8,4	&7,36\\
-0,33	&8,4	&7,24\\
-0,44	&8,4	&7,04\\
-0,53	&8,4	&6,88\\
-0,64	&8,4	&6,56\\
-0,75	&8,4	&6,24\\
-0,81	&8,4	&6,12\\
-0,86	&8,4	&6,08\\
-0,92	&8,4	&5,92\\
-1	&8,4	&5,64\\
-1,2	&8,4	&5,24\\
-1,4	&8,4	&4,8\\
-1,7	&8,3	&4,2\\
-2	&8,3	&3,72\\
-2,2	&8,4	&3,52\\
-2,5	&8,3	&3,16\\
-2,8	&8,3	&2,88\\
-3,2	&8,1	&2,56\\
-3,6	&8,1	&2,36\\
-4	&8	&2,12\\
-4,3	&8	&2,08\\
-4,8	&8	&1,76\\
-5,2	&8	&1,76\\
-5,6	&8,1	&1,6\\
-6	&8,1	&1,44\\
-6,4	&8	&1,44\\
-6,8	&8	&1,4\\
-7,2	&8	&1,18\\
-7,6	&8	&1,14\\
-8	&8	&1,06\\
-8,5	&8	&1,02\\
-9	&8	&0,96\\
-9,5	&8	&0,9\\
-10	&8	&0,86\\
-\bottomrule
-\end{tabular}
-\caption{Messwerte f"ur den hochfrequenten Spannungsteiler (RC-Glied) mit Last $R_L=10 k\Omega$}
-\end{center}
-\end{table}
-
 
 \end{appendix}
 
