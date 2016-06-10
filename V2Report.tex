@@ -103,7 +103,26 @@ Dann wurde die Si-Diode durch eine Z-Diode ersetzt, und die Messung wurde mit gl
 
 Dann wurde die Z-Diode durch eine LED ersetzt, und die Messung wurde wiederholt. Dieses Mal aber, war das Ziel lediglich die Schwellspannung zu bestimmen, bei welcher die LED leuchtet. Deswegen wurde die Gleichspannung in Schritten von nur 0.1V, statt 2V, erh"oht. Bei der Schwellspannung wird die Verarmungszone d"unn genug, damit Elektronen und L"ocher rekombinieren und Photonen freisetzen k"onnen.
 
-Dann wurde die Wechselspannung um eine Gr"o"senordnung weniger heruntergedreht.\\ \\
+\subsection{3.4 mit Gegenkopplung}
+\subsubsection{Simulation mit Emitterwiderstand}
+Entsprechend Abb. 5 wurde in der Simulation ein Widerstand $R_E$ zw Knoten E und Erde eingebaut (allerdings noch nicht $R_3$ oder $C_E$). Seine Wirkung auf das Ausgangssignal
+
+Der Arbeitspunkt hat sich verschoben, von () auf ()
+
+Aus und eingangswiderstand messen
+zw AC quelle und C1 wurde potentiometer geschaltet. Dieser dient als Lastwiderstand, um den Eingagnswiderstand zu bestimmen. Zwischen dieser und C1, und Erde wurde die Spannung $U_{ein}$ gemessen. Der Potentiometer wurde gedreht, bis $U_{ein}$ die H"alfte ihres Wertes ohne ihn annahm (wegen Leistungsanpassung). Der Widerstand wurde dann abgelesen. Genau dann gleicht er dem Eingangswiderstand. Es hat sich $R_{ein}=615 \Omega$ ergeben.\\
+
+Analog ging es bei der Ausgangswiderstand. $R_{aus}=367 \Omega$ ergeben.
+\subsubsection{}
+
+\subsubsection{Simulation mit Emitterwiderstand}
+
+Dann wurde die Wechselspannung um eine Gr"o"senordnung h"oher auf 0,1$V_{pp}$gedreht. dann 1,5V\\ \\
+\subsubsection{Reale Schaltung}
+Der lautsprecher wurde am Ausgang der Schaltung eingebaut. Ab V_pp > 150mV wurde er hörbar, und lauter mit zunehmender Ampltitude. Ein sine wave mit f=440Hz ergab zB die harmonische Ton A. Es wurden auch ein Rechtecksignal, Sagezahn, noise und arb eingestellt. rechteck war laut und nervig, sagezahn klang ahnlich wie sinus, arb war noise.
+
+\subsubsection{Erweiterung der simulierten Schaltung}
+Nun wurden $R_3$ und $C_E$ eingebaut.
 \begin{tabular}{l l l l}
 Ger"at & AC ($V_{pp}$) & AC ($2 \cdot V_{RMS}$) & DC (V) \\
 Generator & 0,25 & - & 0,60 \\
@@ -139,26 +158,7 @@ Bei $P_{max}$, $\dfrac{dP}{dR}=0=\frac{50 \Omega - R}{2(R+50 \Omega)^3}$. $P_{ma
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Hochohmiger Spannungsteiler}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Nach Abb. 3 in der Versuchsbeschreibung wurde ein Hochohmiger Spannungsteiler aufgebaut, wobei alle Widerst"ande $R_i=1M\Omega$ beitragen. Erst wurde die Spannung "uber den ersten Widerstand gemessen, dann "uber die ersten zwei, bis auf alle zusammen. Mit dem Generator wurde eine Wechselspannung von $V_{pp}=8V$ mit Frequenz $f=1kHz$ angelegt. Erst wurde die Messreihe nur mit dem Multimieter EX330 gemacht, und dann mit parallel angeschlossenen Oszilloskop wiederholt.\\
-
-
-Die unterschiedlichen Verl"aufe lassen sich durch Innenwiderst"ande der Messger"ate erkl"aren. Die "Ubertragungsfunktion lautet
-
-\begin{eqnarray}
- \frac{U_a}{U_0} = 1-\frac{R_{\Sigma}-R_K}{R_{\Sigma}-R_K+(R_I \vert \vert R_K)}
-\end{eqnarray}
-
-Hier ist $R_{\Sigma}=8M\Omega$ die Summe aller geschalteten Widerst"ande, $R_K$ ist die Summe der Kette von Widerst"ande, wor"uber die Spannung $U_a$ gerade gemessen wird, und $R_I$ ist der Innenwiderstand des verwendeten Ger"ates. Die berechnete Gerade geht von idealen Bedingungen aus, wobei $R_I \rightarrow \infty$ und (3) vereinfacht zu $\frac{U}{U_0} = \frac{R_K}{R_{\Sigma}}$. Mit etwas Algebra wird (3) zu
-
-\begin{eqnarray}
- \frac{U_a}{U_0} = 1-\frac{R_{\Sigma}R_I+R_K(R_I-R_{\Sigma})-R_K^2}{R_{\Sigma}R_I+R_K(2R_I-R_{\Sigma})-R_K^2}
-\end{eqnarray}
-\noindent
-Die Verl"aufe der Messwerte approximieren diese quadratische Funktion.
-\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Frequenzabh"angiger Spannungsteiler (RC-Glied)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
